@@ -4,6 +4,6 @@ This repository contains my solutions to [LeetCode](https://leetcode.com/) probl
 
 ## Problem Categories
 
-- [Easy](./easy)
-- [Medium](./medium)
-- [Hard](./hard)
+[Easy](./solutions/01_easy)
+[Medium](./solutions/02_medium)
+[Hard](./solutions/03_hard)
