@@ -10,10 +10,9 @@ from collections import deque
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        queue = deque()
-
         carry = 0
         head, current_node = None, None
+        x = True
         while l1 or l2 or carry > 0:
             if l1:
                 num1 = l1.val
@@ -30,14 +29,12 @@ class Solution:
             carry = digit // 10
             digit = digit % 10
 
-            queue.append(digit)
-
-        head = queue.popleft()
-        head = ListNode(head)
-        current_node = head
-        while queue:
-            num = queue.popleft()
-            current_node.next = ListNode(num)
-            current_node = current_node.next
+            if x:
+                head = ListNode(digit)
+                current_node = head
+                x = False
+            else:
+                current_node.next = ListNode(digit)
+                current_node = current_node.next
 
         return head
