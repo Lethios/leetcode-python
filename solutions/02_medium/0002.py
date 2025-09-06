@@ -1,5 +1,3 @@
-# https://leetcode.com/problems/add-two-numbers/
-
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -11,8 +9,8 @@ from collections import deque
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         carry = 0
-        head, current_node = None, None
-        x = True
+        test = ListNode(0)
+        current_node = test
         while l1 or l2 or carry > 0:
             if l1:
                 num1 = l1.val
@@ -29,12 +27,7 @@ class Solution:
             carry = digit // 10
             digit = digit % 10
 
-            if x:
-                head = ListNode(digit)
-                current_node = head
-                x = False
-            else:
-                current_node.next = ListNode(digit)
-                current_node = current_node.next
+            current_node.next = ListNode(digit)
+            current_node = current_node.next
 
-        return head
+        return test.next
