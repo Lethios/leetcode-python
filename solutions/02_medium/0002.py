@@ -8,32 +8,34 @@ from collections import deque
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        stack = deque()
+        queue = deque()
 
-        current_node = l1
-        while current_node:
-            stack.append(current_node.val)
+        carry = 0
+        head, current_node = None, None
+        while l1 or l2 or carry > 0:
+            if l1:
+                num1 = l1.val
+                l1 = l1.next
+            else:
+                num1 = 0
+            if l2:
+                num2 = l2.val
+                l2 = l2.next
+            else:
+                num2 = 0
+            
+            digit = num1 + num2 + carry
+            carry = digit // 10
+            digit = digit % 10
+
+            queue.append(digit)
+
+        head = queue.popleft()
+        head = ListNode(head)
+        current_node = head
+        while queue:
+            num = queue.popleft()
+            current_node.next = ListNode(num)
             current_node = current_node.next
-        
-        num1 = ""
-        while stack:
-            num1 += str(stack.pop())
 
-        current_node = l2
-        while current_node:
-            stack.append(current_node.val)
-            current_node = current_node.next
-
-        num2 = ""
-        while stack:
-            num2 += str(stack.pop())
-
-        num = str(int(num1) + int(num2))
-
-        head_node = ListNode(int(num[-1]))
-        current_node = head_node
-        for digit in num[-2::-1]:
-            current_node.next = ListNode(int(digit))
-            current_node = current_node.next
-
-        return head_node
+        return head
