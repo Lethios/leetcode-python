@@ -6,7 +6,7 @@ class Solution:
         min_price = math.inf
 
         for price in prices:
-            min_price = min(price, min_price)
-            max_profit = max(price - min_price, max_profit)
+            min_price = price if price < min_price else min_price
+            max_profit = price - min_price if price - min_price > max_profit else max_profit
 
         return max_profit
