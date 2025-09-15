@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/maximum-number-of-words-you-can-type/
+
 class Solution:
     def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
         invalid = set(letter for letter in brokenLetters)
