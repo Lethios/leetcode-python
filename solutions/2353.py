@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/design-a-food-rating-system/
+
 from sortedcontainers import SortedList
 
 class FoodRatings:
