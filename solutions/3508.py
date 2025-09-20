@@ -20,8 +20,8 @@ class Router:
                 self.dest_map[packet[1]].pop(0)
                 
             return True
-        else:
-            return False
+
+        return False
 
     def forwardPacket(self) -> List[int]:
         if self.queue:
@@ -30,8 +30,8 @@ class Router:
             self.dest_map[packet[1]].pop(0)
 
             return packet
-        else:
-            return []
+
+        return []
 
     def getCount(self, destination: int, startTime: int, endTime: int) -> int:
         start = bisect.bisect_left(self.dest_map[destination], startTime)
