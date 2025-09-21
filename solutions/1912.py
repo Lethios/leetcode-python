@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/design-movie-rental-system/
+
 class MovieRentingSystem:
     def __init__(self, n: int, entries: list[list[int]]):
         self.available = dict()
