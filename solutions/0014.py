@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/longest-common-prefix/
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         len_strs, len_strs_word = len(strs), len(strs[0])
