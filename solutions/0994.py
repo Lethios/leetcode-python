@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/rotting-oranges/
+
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         grid_dim = (len(grid), len(grid[0]))
