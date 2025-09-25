@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/triangle/
+
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         for row in reversed(range(1, len(triangle))):
