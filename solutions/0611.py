@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/valid-triangle-number/
+
 class Solution:
     def triangleNumber(self, nums: List[int]) -> int:
         nums.sort()
