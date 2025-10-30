@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/make-array-elements-equal-to-zero/
+
 class Solution:
     def countValidSelections(self, nums: List[int]) -> int:
         length = len(nums)
