@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/maximum-total-damage-with-spell-casting
+# https://leetcode.com/problems/maximum-total-damage-with-spell-casting/
 
 class Solution:
     def maximumTotalDamage(self, power: List[int]) -> int:
