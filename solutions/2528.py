@@ -9,7 +9,7 @@ class Solution:
             diff[max(0, i - r)] += j
             diff[min(n - 1, i + r) + 1] -= j
 
-        low, high = min(accumulate(diff[:n])), 2 * 10**10
+        low, high = min(accumulate(diff[:n])), 2 * (10 ** 10)
 
         def check(mid):
             temp = diff[:] 
